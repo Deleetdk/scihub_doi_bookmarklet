@@ -10,7 +10,7 @@ javascript:(function(){
 	http://stackoverflow.com/questions/27910/finding-a-doi-in-a-document-or-page
 	https://www.doi.org/doi_handbook/2_Numbering.html
 	*/
-    var re_DOI = /\b10\.[^\s\%"#\?]+\/[^\s\%"#\?]+/;
+    var re_DOI = /\b10\.[^\s\%"#\?,']+\/[^\s\%"#\?,']+/;
 	
 	/*matches*/
 	var re_matches = re_DOI.exec(site_html);
@@ -25,7 +25,7 @@ javascript:(function(){
 	if (re_matches === null) {
 		/*let user know there wasn't any DOIs to be found*/
 		alert("Could not find any DOI!");
-		return null;
+		return undefined;
 	}
 	
 	/*make url*/
